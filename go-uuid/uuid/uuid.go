@@ -12,6 +12,10 @@ import (
 	"strings"
 )
 
+func MyCustomFunction() string {
+	return "a function i added to the .../go-uuid/uuid package"
+}
+
 // A UUID is a 128 bit (16 byte) Universal Unique IDentifier as defined in RFC
 // 4122.
 type UUID []byte
