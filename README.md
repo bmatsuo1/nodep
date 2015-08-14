@@ -16,25 +16,12 @@ The following command exhibits previously unexpected behavior (when cloned at
 Prior to 9805c4da6f164857a4e32dbfe83767f1118c9ad4 this command was a noop
 because all dependencies to mycmd are within this repo.
 
-At 9805c4da6f164857a4e32dbfe83767f1118c9ad4 the intrarepository dependecy is
-copied into the godep workspace and `hg` commands are run which end up
-modifying files and dirtying the repository. The following `git status` output
-summarized how the repository is modified.
+At 9805c4da6f164857a4e32dbfe83767f1118c9ad4 godep attempts to vendor the
+intrarepository dependencies and fails.
 
 ```
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-    modified:   ../go-uuid/.hg/dirstate
-    modified:   Godeps/Godeps.json
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-    ../go-uuid/.hg/cache/tags
-    Godeps/_workspace/src/
-
-no changes added to commit (use "git add" and/or "git commit -a")
+# cd /home/bmatsuo/src/github.com/bmatsuo1/nodep/go-uuid/uuid; hg diff -r 7dda39b2e7d5e265014674c5af696ba4186679e9+
+hg: parse error at 41: not a prefix: end
+godep: dirty working tree (please commit changes): /home/bmatsuo/src/github.com/bmatsuo1/nodep/go-uuid/uuid
+godep: error loading dependencies
 ```
