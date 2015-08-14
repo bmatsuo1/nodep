@@ -4,9 +4,9 @@ a recent commit.
 https://github.com/tools/godep/commit/9805c4da6f164857a4e32dbfe83767f1118c9ad4
 
 **NOTE:** The `go-uuid` directory in this repo is from
-https://code.google.com/p/go-uuid.  It has merely been cloned and commited to
-this repo.  Following that, customization was added to the library and
-committed to git (not commited to `hg`).
+https://code.google.com/p/go-uuid.  It has been cloned and commited to this
+repo.  Following that, customization was added to the library and committed to
+git (not commited to `hg`).
 
 The following command exhibits previously unexpected behavior (when cloned at
 `$GOPATH/src/github.com/bmatsuo1/nodep`)
